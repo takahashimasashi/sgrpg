@@ -8,24 +8,27 @@
 // ini_set('display_errors', 'On');
 // ini_set('error_reporting', E_ALL);
 
+//
+require_once('../util.php');
+
 //-------------------------------------------------
 // 引数を受け取る
 //-------------------------------------------------
 // ユーザーIDを受け取る
-$uid = isset($_GET['uid'])?  $_GET['uid']:null;
+//$uid = isset($_GET['uid'])?  $_GET['uid']:null;
 
 // Validation
-if( ($uid === null) || (!is_numeric($uid)) ){
-  sendResponse(false, 'Invalid uid');
-  exit(1);
-}
+//if( ($uid === null) || (!is_numeric($uid)) ){
+//  sendResponse(false, 'Invalid uid');
+//  exit(1);
+//}
 
 //-------------------------------------------------
 // 準備
 //-------------------------------------------------
-$dsn  = 'mysql:dbname=sgrpg;host=127.0.0.1';  // 接続先を定義
-$user = 'senpai';      // MySQLのユーザーID
-$pw   = 'indocurry';   // MySQLのパスワード
+//$dsn  = 'mysql:dbname=sgrpg;host=127.0.0.1';  // 接続先を定義
+//$user = 'senpai';      // MySQLのユーザーID
+//$pw   = 'indocurry';   // MySQLのパスワード
 
 // 実行したいSQL
 $sql = 'SELECT * FROM User WHERE id=:id';  // Userテーブルの指定列を取得
@@ -73,10 +76,10 @@ else{
  * @param array   $value
  * @return void
  */
-function sendResponse($status, $value=[]){
-  header('Content-type: application/json');
-  echo json_encode([
-    'status' => $status,
-    'result' => $value
-  ]);
-}
+//function sendResponse($status, $value=[]){
+//  header('Content-type: application/json');
+//  echo json_encode([
+//    'status' => $status,
+//    'result' => $value
+//  ]);
+//}
